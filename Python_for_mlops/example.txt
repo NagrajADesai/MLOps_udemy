@@ -1,0 +1,3 @@
+'Hello, 
+    This file is created using python write text mode.
+        close the file after opening.
