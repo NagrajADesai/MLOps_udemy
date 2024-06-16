@@ -39,3 +39,4 @@
 ### Steps
 1. completed config.py - contain all paths and variables
 2. data_handling.py - create function to load dataset and save the model
+3. preprocessing.py - create classes for all data preprocessing steps.
