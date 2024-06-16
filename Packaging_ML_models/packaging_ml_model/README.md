@@ -1,7 +1,12 @@
+# Packaging_ml_model
+
+- Experiments - contain experiments required for the project
+- packaging_ml_model - contain complete model pipeline 
+- tests - check the test cases
+
 ## Directory structure
-prediction_model
 
-
+```
 ├── MANIFEST.in
 ├── prediction_model
 │   ├── config
@@ -29,3 +34,8 @@ prediction_model
 └── tests
     ├── pytest.ini
     └── test_prediction.py
+```
+
+### Steps
+1. completed config.py - contain all paths and variables
+2. data_handling.py - create function to load dataset and save the model
