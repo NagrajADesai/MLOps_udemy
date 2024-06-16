@@ -40,3 +40,6 @@
 1. completed config.py - contain all paths and variables
 2. data_handling.py - create function to load dataset and save the model
 3. preprocessing.py - create classes for all data preprocessing steps.
+4. pipeline.py - create complete data preprocessing pipeline
+5. training_pipleline.py - create function to train the model
+6. predict.py - create function to predict the result

@@ -23,7 +23,7 @@ TARGET = 'Loan_Status'
 # final features used in the model
 FEATURES = ['Gender', 'Married', 'Dependents', 'Education', 'Self_Employed',
        'ApplicantIncome', 'LoanAmount', 'Loan_Amount_Term', 'Credit_History',
-       'Property_Area']
+       'Property_Area','CoApplicantIncome']
 
 NUM_FEATURES = ['ApplicantIncome', 'LoanAmount', 'Loan_Amount_Term']
 
@@ -50,5 +50,5 @@ FEATURE_TO_ADD = 'CoApplicantIncome'
 DROP_FEATURES = ['CoApplicantIncome']
 
 # taking log of numerical columns
-LOG_FEATURES = ['ApplicantIncome', 'LoanAmount']
+LOG_FEATURES = ['ApplicantIncome', 'LoanAmount', 'Loan_Amount_Term']
 
