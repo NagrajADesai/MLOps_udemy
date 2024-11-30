@@ -1,10 +1,17 @@
 # complete pipeline
+import sys
+from pathlib import Path
+import os
 from sklearn.pipeline import Pipeline
 from prediction_model.config import config
 from prediction_model.processing import preprocessing as pp
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.linear_model import LogisticRegression
-import numpy as np
+
+
+# adding the below path to avoid module not found error
+PACKAGE_ROOT = Path(os.path.abspath(os.path.dirname(__file__))).parent
+sys.path.append(str(PACKAGE_ROOT))
 
 Classification_pipeline = Pipeline(
     [

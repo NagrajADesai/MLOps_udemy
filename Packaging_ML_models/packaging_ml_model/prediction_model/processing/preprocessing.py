@@ -1,6 +1,13 @@
 from sklearn.base import BaseEstimator, TransformerMixin
 import numpy as np
+import os 
+import sys 
+from pathlib import Path
 from prediction_model.config import config
+
+
+PACKAGE_ROOT = Path(os.path.abspath(os.path.dirname(__file__))).parent.parent
+sys.path.append(str(PACKAGE_ROOT))
 
 # numerical imputation - mean
 class MeanImputer(BaseEstimator, TransformerMixin):
@@ -29,7 +36,7 @@ class ModeImputer(BaseEstimator, TransformerMixin):
     def fit(self, X,y=None):
         self.mode_dict = {}
         for col in self.variables:
-            self.mode_dict[col] = X[col].mode()
+            self.mode_dict[col] = X[col].mode()[0]
         return self 
     
     def transform(self, X):
@@ -64,7 +71,8 @@ class DomainProcessing(BaseEstimator, TransformerMixin):
     
     def transform(self, X):
         X = X.copy()
-        X[self.variable_to_modify] = X[self.variable_to_modify] + X[self.variable_to_add]
+        for feature in self.variable_to_modify:
+            X[feature] = X[feature] + X[self.variable_to_add]
         return X
     
 # custom label encoder

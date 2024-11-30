@@ -1,8 +1,13 @@
 # create function to load dataset and save the model
 import os
+import sys
+from pathlib import Path
 import joblib
 import pandas as pd
 from prediction_model.config import config
+
+PACKAGE_ROOT = Path(os.path.abspath(os.path.dirname(__file__))).parent.parent
+sys.path.append(str(PACKAGE_ROOT))
 
 # create a function to read the dataset
 def load_dataset(file_name):
@@ -18,7 +23,7 @@ def save_pipeline(pipeline_to_save):
 
 # deserialization of model
 def load_pipeline(pipeline_to_load):
-    save_path = os.path.join(config.SAVE_MODEL_PATH, config.MODEL_NAME)
+    save_path = os.path.join(config.SAVE_MODEL_PATH, pipeline_to_load)
     model_loaded = joblib.load(save_path)
     print("Model has been loaded")
     return model_loaded
