@@ -1,0 +1,47 @@
+# This line is comment 
+my-course: "MLOps Bootcamp: Mastering AI Operations for Success - AIOps"
+version: 1.0
+price: 299
+is_public: true
+# date format YYYY-MM-DD
+release_date: 2024-06-12
+pre_enroll: null
+
+# we can write list of values in two types
+# 1. list can be writen as below
+category:
+ - AWS
+ - DevOps
+ - AWS Certification
+
+# 2. list can be writen as below
+course_dev: ['spidy','hulk','iron-man']
+
+# array which contains object(list of dictionaries)
+dev_details: 
+ - name: 'spidy'
+   email: 'abc@gmail.com'
+   role: 'author'
+  
+ - name: 'hult'
+   email: 'abc@gmail.com'
+   role: 'co-author'
+   
+ - name: 'iron-man'
+   email: 'abc@gmail.com'
+   role: 'editor'
+
+# another approach
+ - {name: 'cap', email: 'abc@gmail.com', role: 'finance'}
+
+# single line string (it will strip the information to one line)
+short_description: >
+This is a course for
+AWS DevOps professional
+certification
+
+# multi line string (retain the new line)
+detailed_description: | 
+This course has been 
+created with the colaboration
+with industry experts.
